@@ -13,7 +13,7 @@ namespace Lab_4
             switch (key)
             {
                 case ConsoleKey.D1:
-
+                    //
                     Console.WriteLine();
                     Console.WriteLine("Лабораторна работа номер четыре || задание один");
 
