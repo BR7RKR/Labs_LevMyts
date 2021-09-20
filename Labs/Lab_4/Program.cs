@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_4
+namespace Labs_
 {
     class Program
     {
@@ -18,6 +18,7 @@ namespace Lab_4
             {
                 case ConsoleKey.D1:
 
+                    Console.WriteLine();
                     Console.WriteLine("Лабораторна работа номер четыре || задание один");
 
                     Console.Write("...\n...\n...\n...\n");
@@ -49,6 +50,7 @@ namespace Lab_4
                     break;
 
                 case ConsoleKey.D2:
+
 
                     break;
                 default:
