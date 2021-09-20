@@ -7,7 +7,7 @@ namespace Lab_5
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Выберети задание 4 лабораторной работы (1-5)");
+            Console.WriteLine("Выберети задание 5 лабораторной работы (1-5)");
             var key = Console.ReadKey().Key;
 
             switch (key)
