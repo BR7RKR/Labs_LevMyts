@@ -102,7 +102,7 @@ namespace Lab_4
                 case ConsoleKey.D4:
 
                     Console.WriteLine();
-                    Console.WriteLine("Лабораторна работа номер четыре || задание три");
+                    Console.WriteLine("Лабораторна работа номер четыре || задание четыре");
 
                     Console.Write("...\n...\n...\n...\n");
 
@@ -135,7 +135,7 @@ namespace Lab_4
                 case ConsoleKey.D5:
 
                     Console.WriteLine();
-                    Console.WriteLine("Лабораторна работа номер четыре || задание три");
+                    Console.WriteLine("Лабораторна работа номер четыре || задание пять");
 
                     Console.Write("...\n...\n...\n...\n");
 
