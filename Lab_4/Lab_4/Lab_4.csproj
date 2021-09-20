@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFFF3A9E-7C3A-4554-9FAD-444E5B1FF548}</ProjectGuid>
+    <ProjectGuid>{462D54D3-129F-49F2-BF41-E527BB4998CC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lab_1</RootNamespace>
-    <AssemblyName>Lab_1</AssemblyName>
+    <RootNamespace>Lab_4</RootNamespace>
+    <AssemblyName>Lab_4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Rectangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
