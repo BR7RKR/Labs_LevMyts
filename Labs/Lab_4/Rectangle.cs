@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labs_
+namespace Lab_4
 {
     public class Rectangle
     {
         private float _width;
-
         public float width
         {
             get { return _width; }
@@ -17,7 +16,6 @@ namespace Labs_
         }
 
         private float _length;
-
         public float length
         {
             get { return _length; }

@@ -7,7 +7,7 @@ namespace Test
         static void Main(string[] args)
         {
             var key = Console.ReadKey().Key;
-            Console.WriteLine(key);
+            Console.WriteLine(Math.PI);
         }
     }
 }
