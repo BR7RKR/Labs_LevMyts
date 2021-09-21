@@ -39,13 +39,13 @@ namespace Lab_5
                     Console.Write("Y - ");
                     bool isY2 = double.TryParse(Console.ReadLine(), out double y2);
 
-
+                    //Проверяю, что формат вводных данных правильный
                     if (isX1 == false || isY1 == false || isX2 == false || isY2 == false)
                     {
                         throw new Exception("WrongNumberFormat");
                     }
 
-
+                    // Создаю новые точки
                     Point point1 = new Point { X = x1, Y = y1 };
                     Point point2 = new Point { X = x2, Y = y2 };
 
@@ -90,13 +90,13 @@ namespace Lab_5
                     bool isX3_ = double.TryParse(Console.ReadLine(), out double x3_);
                     Console.Write("Y - ");
                     bool isY3_ = double.TryParse(Console.ReadLine(), out double y3_);
-
+                    //Проверяю, что формат вводных данных правильный
                     if (isX1_ == false || isY1_ == false || isX2_ == false || isY2_ == false || isX3_ == false || isY3_ == false)
                     {
                         throw new Exception("WrongNumberFormat");
                     }
 
-
+                    //Cоздаю новые точки
                     Point A = new Point { X = x1_, Y = y1_ };
                     Point B = new Point { X = x2_, Y = y2_ };
                     Point C = new Point { X = x3_, Y = y3_ };
@@ -139,10 +139,10 @@ namespace Lab_5
 
                     Console.Write("X - ");
                     bool isX3__ = double.TryParse(Console.ReadLine(), out double x3__);
-                    //Проверяю
+                    //Проверяю, что точка C между A и B
                     if (x3__ > x2__ && x3__ < x1__ || x3__ < x2__ && x3__ > x1__)
                     {
-
+                        //Проверяю, что формат вводных данных правильный
                         if (isX1__ == false || isX2__ == false || isX3__ == false)
                         {
                             throw new Exception("WrongNumberFormat");
@@ -168,6 +168,10 @@ namespace Lab_5
 
                     break;
 
+                case ConsoleKey.D4:
+
+                    
+                    break;
                 default:
                     break;
             }
