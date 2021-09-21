@@ -7,7 +7,7 @@ namespace Lab_4
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Выберети задание 4 лабораторной работы (1-5)");
+            Console.WriteLine("Выберите задание 4 лабораторной работы (1-5)");
             var key = Console.ReadKey().Key;
 
             switch (key)
@@ -15,7 +15,7 @@ namespace Lab_4
                 case ConsoleKey.D1:
 
                     Console.WriteLine();
-                    Console.WriteLine("Лабораторна работа номер четыре || задание один");
+                    Console.WriteLine("Лабораторная работа номер четыре || задание один");
 
                     Console.Write("...\n...\n...\n...\n");
 
@@ -49,7 +49,7 @@ namespace Lab_4
                 case ConsoleKey.D2:
 
                     Console.WriteLine();
-                    Console.WriteLine("Лабораторна работа номер четыре || задание два");
+                    Console.WriteLine("Лабораторная работа номер четыре || задание два");
 
                     Console.Write("...\n...\n...\n...\n");
 
@@ -96,13 +96,13 @@ namespace Lab_4
                     float arithmeticMean = (firstNumber + secondNumber) / 2;
 
                     Console.WriteLine($"Среднее арифметическое = {arithmeticMean}");
-                    //
+              
                     break;
 
                 case ConsoleKey.D4:
 
                     Console.WriteLine();
-                    Console.WriteLine("Лабораторна работа номер четыре || задание четыре");
+                    Console.WriteLine("Лабораторная работа номер четыре || задание четыре");
 
                     Console.Write("...\n...\n...\n...\n");
 

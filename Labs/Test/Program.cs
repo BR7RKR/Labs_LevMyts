@@ -6,6 +6,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            double I = 10;
+            double I2 = 15;
             Point point1 = new Point { X= 6, Y =2 };
 
             Point point2 = new Point { X = 2, Y = 6 };
@@ -13,6 +15,11 @@ namespace Test
             double range = Math.Sqrt(Math.Pow(point2.X - point1.X, 2) + Math.Pow(point2.Y - point1.Y, 2));
 
             Console.WriteLine(range);
+
+            if ((I > I2> 10)
+            {
+
+            }
         }
     }
 
