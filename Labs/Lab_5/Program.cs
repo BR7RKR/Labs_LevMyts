@@ -170,7 +170,47 @@ namespace Lab_5
 
                 case ConsoleKey.D4:
 
-                    
+                    Console.WriteLine();
+                    Console.WriteLine("Лабораторная работа номер пять || задание четыре");
+
+
+                    Console.Write("...\n...\n...\n...\n");
+
+
+                    Console.WriteLine("Введите координату X вершины, которая не лежит на оси X: ");
+
+                    Console.Write("X - ");
+                    bool is_X1 = double.TryParse(Console.ReadLine(), out double x_1);
+
+
+
+                    Console.WriteLine(" ");
+
+
+                    Console.WriteLine("Введите координату Y вершины, которая лежит на оси X: ");
+
+                    Console.Write("Y - ");
+                    bool is_Y2 = double.TryParse(Console.ReadLine(), out double y_2);
+
+                    //Проверяю, что формат вводных данных правильный
+                    if (is_X1 == false || is_Y2 == false)
+                    {
+                        throw new Exception("WrongNumberFormat");
+                    }
+
+                    // Создаю вершины
+                    Point point_1 = new Point { X = x_1, Y = 0 };
+                    Point point_2 = new Point { X = 0, Y = y_2 };
+
+                    double perimetor = 2 * (x_1 + y_2);
+                    double area = x_1 * y_2;
+
+                    Console.Write("...\n...\n...\n...\n");
+                    Console.WriteLine($"Площадь = {area} || Периметр = {perimetor}");
+                    break;
+
+                case ConsoleKey.D5:
+
                     break;
                 default:
                     break;
