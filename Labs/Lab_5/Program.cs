@@ -55,6 +55,7 @@ namespace Lab_5
                     Console.WriteLine($"Расстояние между точками = {range}");
 
                     break;
+
                 default:
                     break;
             }

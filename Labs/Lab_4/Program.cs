@@ -96,7 +96,7 @@ namespace Lab_4
                     float arithmeticMean = (firstNumber + secondNumber) / 2;
 
                     Console.WriteLine($"Среднее арифметическое = {arithmeticMean}");
-
+                    //
                     break;
 
                 case ConsoleKey.D4:
