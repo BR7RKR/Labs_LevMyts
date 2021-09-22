@@ -177,11 +177,10 @@ namespace Lab_5
                     Console.Write("...\n...\n...\n...\n");
 
 
-                    Console.WriteLine("Введите координату X вершины, которая не лежит на оси X: ");
+                    Console.WriteLine("Введите координату X вершины, которая не лежит на оси Y: ");
 
                     Console.Write("X - ");
                     bool is_X1 = double.TryParse(Console.ReadLine(), out double x_1);
-
 
 
                     Console.WriteLine(" ");
@@ -260,6 +259,12 @@ namespace Lab_5
 
                     double perimetorT = triangleAB + triangleAC + triangleBC;
                     double areaT = Math.Sqrt((perimetorT / 2) * (perimetorT / 2 - triangleAB) * (perimetorT / 2 - triangleAC) * (perimetorT / 2 - triangleBC));
+
+                    //Проверяю, что значения площади и периметра имеют смысл
+                    if (areaT <= 0 && perimetorT <= 0)
+                    {
+                        throw new Exception("FailedToCreateTriangle");
+                    }
 
                     Console.Write("...\n...\n...\n...\n");
                     Console.WriteLine($"Периметр = {perimetorT} || Площадь = {areaT}");
