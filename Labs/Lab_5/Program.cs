@@ -211,6 +211,59 @@ namespace Lab_5
 
                 case ConsoleKey.D5:
 
+                    Console.WriteLine();
+                    Console.WriteLine("Лабораторная работа номер пять || задание пять");
+
+
+                    Console.Write("...\n...\n...\n...\n");
+
+
+                    Console.WriteLine("Введите координаты первой вершины: ");
+
+                    Console.Write("X - ");
+                    bool is_X1_ = double.TryParse(Console.ReadLine(), out double x_1_);
+                    Console.Write("Y - ");
+                    bool is_Y1_ = double.TryParse(Console.ReadLine(), out double y_1_);
+
+
+                    Console.WriteLine(" ");
+
+
+                    Console.WriteLine("Введите координаты второй вершины: ");
+
+                    Console.Write("X - ");
+                    bool is_X2_ = double.TryParse(Console.ReadLine(), out double x_2_);
+                    Console.Write("Y - ");
+                    bool is_Y2_ = double.TryParse(Console.ReadLine(), out double y_2_);
+
+
+                    Console.WriteLine("Введите координаты третьей вершины: ");
+
+                    Console.Write("X - ");
+                    bool is_X3_ = double.TryParse(Console.ReadLine(), out double x_3_);
+                    Console.Write("Y - ");
+                    bool is_Y3_ = double.TryParse(Console.ReadLine(), out double y_3_);
+                    //Проверяю, что формат вводных данных правильный
+                    if (is_X1_ == false || is_Y1_ == false || is_X2_ == false || is_Y2_ == false || is_X3_ == false || is_Y3_ == false)
+                    {
+                        throw new Exception("WrongNumberFormat");
+                    }
+
+                    //Cоздаю новые точки
+                    Point A__ = new Point { X = x_1_, Y = y_1_ };
+                    Point B__ = new Point { X = x_2_, Y = y_2_ };
+                    Point C__ = new Point { X = x_3_, Y = y_3_ };
+
+                    double triangleAB = Math.Sqrt(Math.Pow(A__.X - B__.X, 2) + Math.Pow(A__.Y - B__.Y, 2));
+                    double triangleAC = Math.Sqrt(Math.Pow(A__.X - C__.X, 2) + Math.Pow(A__.Y - C__.Y, 2));
+                    double triangleBC = Math.Sqrt(Math.Pow(B__.X - C__.X, 2) + Math.Pow(B__.Y - C__.Y, 2));
+
+                    double perimetorT = triangleAB + triangleAC + triangleBC;
+                    double areaT = Math.Sqrt((perimetorT / 2) * (perimetorT / 2 - triangleAB) * (perimetorT / 2 - triangleAC) * (perimetorT / 2 - triangleBC));
+
+                    Console.Write("...\n...\n...\n...\n");
+                    Console.WriteLine($"Периметр = {perimetorT} || Площадь = {areaT}");
+
                     break;
                 default:
                     break;
