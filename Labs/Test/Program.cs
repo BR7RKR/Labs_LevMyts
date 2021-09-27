@@ -15,11 +15,6 @@ namespace Test
             double range = Math.Sqrt(Math.Pow(point2.X - point1.X, 2) + Math.Pow(point2.Y - point1.Y, 2));
 
             Console.WriteLine(range);
-
-            if ((I > I2> 10)
-            {
-
-            }
         }
     }
 
