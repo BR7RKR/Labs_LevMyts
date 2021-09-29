@@ -15,11 +15,12 @@ namespace Lab_7
         //Инициализирую массу конфет в килограммах и цену за них
         private static float xKg = 25;
         private static float aRub = 1000;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Лабораторная работа номер 7");
             Console.WriteLine("Нажмите на клавишу 1-6 для перехода к нужному заданию");
-
+            //Подключаю обработку клавиш
             var key = Console.ReadKey().Key;
             switch (key)
             {
@@ -29,7 +30,7 @@ namespace Lab_7
                     Console.Write("Введите значение угла в градусах a - ");
 
                     bool isNumber = float.TryParse(Console.ReadLine(), out float aDeg);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isNumber == false)
                     {
                         throw _wrongNumberException;
@@ -50,7 +51,7 @@ namespace Lab_7
                     Console.Write("Введите значение угла в радианах a (без Пи) - ");
 
                     bool is_Number = float.TryParse(Console.ReadLine(), out float aRad);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (is_Number == false)
                     {
                         throw _wrongNumberException;
@@ -70,7 +71,7 @@ namespace Lab_7
                     Console.Write(" - задание \n");
                     Console.Write("Введите массу конфет в кг, которую вам надо купить Y - ");
                     bool isY = float.TryParse(Console.ReadLine(), out float Y);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isY == false)
                     {
                         throw _wrongNumberException;
@@ -93,7 +94,7 @@ namespace Lab_7
                     bool isRange = float.TryParse(Console.ReadLine(), out float S);
                     Console.Write("Введите время, через которое будет проведено следующее сканирование в часах - ");
                     bool isTime = float.TryParse(Console.ReadLine(), out float T);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isVel_1 == false || isVel_2 == false || isRange == false || isTime == false)
                     {
                         throw _wrongNumberException;
@@ -111,13 +112,13 @@ namespace Lab_7
                     bool isNum_1 = double.TryParse(Console.ReadLine(), out double A);
                     Console.Write("Введите число B - ");
                     bool isNum_2 = double.TryParse(Console.ReadLine(), out double B);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isNum_1 == false || isNum_2 == false || A == 0)
                     {
                         throw _wrongNumberException;
                     }
-
-                    double x = (-B) / A;
+                    //Функция метода написана в его описании
+                    double x = Matrix.Solve(A, B);
 
                     Console.WriteLine($"Корень уравнения = {x}");
                     break;
@@ -139,19 +140,13 @@ namespace Lab_7
                     bool isNum4 = double.TryParse(Console.ReadLine(), out double B2);
                     Console.Write("Введите число С2 - ");
                     bool isNumC2 = double.TryParse(Console.ReadLine(), out double C2);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isNum1 == false || isNum2 == false || isNum3 == false || isNum4 == false || isNumC1 == false || isNumC2 == false )
                     {
                         throw _wrongNumberException;
                     }
-
-                    double delta = A1 * B2 - A2 * B1;
-                    double deltaX = C1 * B2 - C2 * B1;
-                    double deltaY = A1 * C2 - A2 * C1;
-
-                    double _x = deltaX / delta;
-                    double _y = deltaY / delta;
-                    
+                    //Функция метода написана в его описании
+                    Matrix.SolveWrite(A1, B1, C1, A2, B2, C2);
                     break;
 
                 default:
