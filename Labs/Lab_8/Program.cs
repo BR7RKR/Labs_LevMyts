@@ -49,6 +49,60 @@ namespace Lab_8
                     Console.WriteLine($"Кол-во маленьких отрезков, которые поместятся на основном {amountOfLS}");
                     break;
 
+                case ConsoleKey.D3:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите длинну первого отрезка - ");
+                    bool isFirstLineS = ulong.TryParse(Console.ReadLine(), out ulong mainLine);
+                    Console.Write("Введите длинну второго отрезка - ");
+                    bool isSecondLineS = ulong.TryParse(Console.ReadLine(), out ulong secondLine);
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isFirstLineS == false || isSecondLineS == false || mainLine <= secondLine)
+                    {
+                        throw _wrongNumberException;
+                    }
+
+                    ulong amountLS = mainLine / secondLine;
+                    ulong freeSpace = mainLine - amountLS*secondLine;
+
+                    Console.WriteLine($"Длина оставшегося места {freeSpace}");
+                    break;
+
+                case ConsoleKey.D4:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите двузначное число - ");
+                    bool is_Number = int.TryParse(Console.ReadLine(), out int number);
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (is_Number == false || number<10 || number > 99)
+                    {
+                        throw _wrongNumberException;
+                    }
+
+                    int revNumber = (number % 10)*10 + (number / 10);
+
+                    Console.WriteLine($"Перевернутое число - {revNumber}");
+                    break;
+
+                case ConsoleKey.D5:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите трехзначное число - ");
+                    bool is3Number = int.TryParse(Console.ReadLine(), out int number3);
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (is3Number == false || number3 < 100 || number3 > 999)
+                    {
+                        throw _wrongNumberException;
+                    }
+
+                    int rev3Number = (number3 % 100)*10 + (number3/100);
+
+                    Console.WriteLine($"Перевернутое число - {rev3Number}");
+                    break;
+
                 default:
                     break;
             }
