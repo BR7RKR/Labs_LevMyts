@@ -62,7 +62,7 @@ namespace Lab_9
                     Console.Write(" - задание \n");
                     Console.Write("Введите кол-во прошедших дней в этом году - ");
                     bool is_Day = int.TryParse(Console.ReadLine(), out int _day);
-                    Console.Write("Введите нопер первого дня в году - ");
+                    Console.Write("Введите номер первого дня в году - ");
                     bool isFDay = int.TryParse(Console.ReadLine(), out int fDay);
                     //вызываю собственные ошибки при нарушении правил ввода 
                     if (is_Day == false || isFDay == false || _day > 365 || _day < 1)
