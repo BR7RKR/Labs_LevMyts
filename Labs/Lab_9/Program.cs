@@ -4,8 +4,8 @@ namespace Lab_9
 {
     class Program
     {
-        private static WrongNumberException WrongNumberEx = new WrongNumberException("WrongNumberFormat");
-        private static byte k = 0;
+        private static WrongNumberException WrongNumberEx = new WrongNumberException("WrongNumberFormat"); //инициализирую экземпляр класса ошибок
+        private static byte k = 0; //инициализирую поле, которое отвечает за счетчик дней в задаче 3 и 4
 
         static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace Lab_9
                     Console.Write(" - задание \n");
                     Console.Write("Введите кол-во секунд, прошедших с начала суток - ");
                     bool isSeconds = ulong.TryParse(Console.ReadLine(), out ulong seconds);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isSeconds == false)
                     {
                         throw WrongNumberEx;
@@ -37,7 +37,7 @@ namespace Lab_9
                     Console.Write(" - задание \n");
                     Console.Write("Введите кол-во прошедших дней в этом году - ");
                     bool isDay = int.TryParse(Console.ReadLine(), out int day);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isDay == false || day>365 || day < 1)
                     {
                         throw WrongNumberEx;
@@ -64,7 +64,7 @@ namespace Lab_9
                     bool is_Day = int.TryParse(Console.ReadLine(), out int _day);
                     Console.Write("Введите нопер первого дня в году - ");
                     bool isFDay = int.TryParse(Console.ReadLine(), out int fDay);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (is_Day == false || isFDay == false || _day > 365 || _day < 1)
                     {
                         throw WrongNumberEx;
@@ -98,7 +98,7 @@ namespace Lab_9
                     bool isB = int.TryParse(Console.ReadLine(), out int B);
                     Console.Write("Введите сторону квадрата - ");
                     bool isC = int.TryParse(Console.ReadLine(), out int C);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (isA == false || isB == false || isC == false || A<1 || B<1 || C<1)
                     {
                         throw WrongNumberEx;
@@ -124,7 +124,7 @@ namespace Lab_9
                     Console.Write(" - задание \n");
                     Console.Write("Введите год - ");
                     bool isYear = int.TryParse(Console.ReadLine(), out int year);
-
+                    //вызываю собственные ошибки при нарушении правил ввода 
                     if (year < 1 || isYear == false)
                     {
                         throw WrongNumberEx;
