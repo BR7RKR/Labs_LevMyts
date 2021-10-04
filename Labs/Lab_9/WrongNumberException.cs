@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lab_9
 {
+    //Создаю новый класс ошибки и наследую его от класса Exception
     class WrongNumberException : Exception
     {
+        //Создаю конструктор класса и наследую его от одного из конструкторов класса Exception
         public WrongNumberException(string message) : base(message){}
     }
 }
