@@ -7,7 +7,7 @@ namespace Lab_11
     {
         //инициализирую собственные ошибки
         private static WrongNumberException WrongNumberEx = new WrongNumberException("WrongNumberFormat");
-        private static WrongNumberException WrongNumberTS = new WrongNumberException("WrongTriangleSide");
+        //private static WrongNumberException WrongNumberTS = new WrongNumberException("WrongTriangleSide");
         private static object temp;
 
         static void Main(string[] args)
@@ -111,7 +111,7 @@ namespace Lab_11
                     //Проверяю, что формат вводных данных правильный
                     if (isX1_ == false || isY1_ == false || isX2_ == false || isY2_ == false || isX3_ == false || isY3_ == false)
                     {
-                        throw new Exception("WrongNumberFormat");
+                        throw WrongNumberEx;
                     }
 
                     //Cоздаю новые точки
@@ -133,6 +133,178 @@ namespace Lab_11
                     }
                     Console.Write($"расстояние от нее до А - {Math.Min(rangeAB, rangeAC)} \n");
                     Console.ResetColor();
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+                case ConsoleKey.D4:
+
+                    Console.Write(" - задание \n");
+
+                    Console.WriteLine("Введите координаты точки: ");
+                    Console.Write("X - ");
+                    bool isX = double.TryParse(Console.ReadLine(), out double x);
+                    Console.Write("Y - ");
+                    bool isY = double.TryParse(Console.ReadLine(), out double y);
+
+                    //Проверяю, что формат вводных данных правильный
+                    if (isX == false || isY == false || x == 0 || y == 0)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    byte chetv = 0;
+                    if (x > 0 && y > 0)
+                    {
+                        chetv = 1;
+                    }
+                    else if (x < 0 && y > 0)
+                    {
+                        chetv = 2;
+                    }
+                    else if (x < 0 && y < 0)
+                    {
+                        chetv = 3;
+                    }
+                    else if (x > 0 && y < 0)
+                    {
+                        chetv = 4;
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Точка находится в {chetv} четверти");
+                    Console.ResetColor();
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+                case ConsoleKey.D5:
+
+                    Console.Write(" - задание \n");
+
+                    Console.Write("Введите целое число - ");
+                    bool isNumb = long.TryParse(Console.ReadLine(), out long numb);
+
+                    //Проверяю, что формат вводных данных правильный
+                    if (isNumb == false)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    if (numb < 0)
+                    {
+                        if (numb % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Отрицательное четное число");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Отрицательное нечетное число");
+                            Console.ResetColor();
+                        }
+                    }
+                    else if (numb > 0)
+                    {
+                        if (numb % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Положительное четное число");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Положительное нечетное число");
+                            Console.ResetColor();
+                        }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Нулевое число");
+                        Console.ResetColor();
+                    }
+
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+                case ConsoleKey.D6:
+
+                    Console.Write(" - задание \n");
+
+                    Console.Write("Введите целое число в диапазоне [1-999] - ");
+                    bool isNmbr = int.TryParse(Console.ReadLine(), out int nmbr);
+
+                    //Проверяю, что формат вводных данных правильный
+                    if (isNmbr == false || nmbr > 999)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    if (nmbr % 2 == 0)
+                    {
+                        if (nmbr > 99)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Четное трехзначное число");
+                            Console.ResetColor();
+                        }
+                        else if (nmbr > 9 && nmbr < 100)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Четное двузначное число");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Четное однозначное число");
+                            Console.ResetColor();
+                        }
+                    }
+                    else
+                    {
+                        if (nmbr > 99)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Нечетное трехзначное число");
+                            Console.ResetColor();
+                        }
+                        else if (nmbr > 9 && nmbr < 100)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Нечетное двузначное число");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Нечетное однозначное число");
+                            Console.ResetColor();
+                        }
+                    }
 
                     Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
                     Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
