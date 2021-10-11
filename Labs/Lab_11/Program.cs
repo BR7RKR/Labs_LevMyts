@@ -8,7 +8,7 @@ namespace Lab_11
         //инициализирую собственные ошибки
         private static WrongNumberException WrongNumberEx = new WrongNumberException("WrongNumberFormat");
         //private static WrongNumberException WrongNumberTS = new WrongNumberException("WrongTriangleSide");
-        private static object temp;
+        private static ulong temp;
 
         static void Main(string[] args)
         {
@@ -31,19 +31,19 @@ namespace Lab_11
                         throw WrongNumberEx;
                     }
 
-                    if (A != B)
+                    if (A != B)//проверяю неравенство
                     {
-                        temp = Math.Max(A, B);
-                        A = (ulong)temp;
-                        B = (ulong)temp;
+                        temp = Math.Max(A, B);//заношу максимальное число в буферную переменную
+                        A = temp;
+                        B = temp;
                     }
-                    else if (A == B)
+                    else if (A == B)//проверяю равенство
                     {
                         A = 0;
                         B = 0;
                     }
 
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
                     Console.WriteLine($"Новые значения A - {A} B - {B}");
                     Console.ResetColor(); // сбрасываю цвета консоли
 
@@ -73,7 +73,7 @@ namespace Lab_11
 
                     double max2Sum = _A + _B + _C - Math.Min(_A, Math.Min(_B, _C));
 
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                     Console.WriteLine($"Сумма двух наибольших значений из трех - {max2Sum}");
                     Console.ResetColor(); // сбрасываю цвета консоли
 
@@ -122,7 +122,7 @@ namespace Lab_11
                     double rangeAB = Math.Sqrt(Math.Pow(pointA.X - pointB.X, 2) + Math.Pow(pointA.Y - pointB.Y, 2));
                     double rangeAC = Math.Sqrt(Math.Pow(pointA.X - pointC.X, 2) + Math.Pow(pointA.Y - pointC.Y, 2));
 
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                     if (rangeAB > rangeAC)
                     {
                         Console.Write($"Ближайшая точка имеет координаты C({pointC.X} {pointC.Y}), ");
@@ -132,7 +132,7 @@ namespace Lab_11
                         Console.Write($"Ближайшая точка имеет координаты B({pointB.X} {pointB.Y}), ");
                     }
                     Console.Write($"расстояние от нее до А - {Math.Min(rangeAB, rangeAC)} \n");
-                    Console.ResetColor();
+                    Console.ResetColor(); // сбрасываю цвета консоли
 
                     Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
                     Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
@@ -158,7 +158,7 @@ namespace Lab_11
                     {
                         throw WrongNumberEx;
                     }
-
+                    //Узнаю к какой четверти относится точка
                     byte chetv = 0;
                     if (x > 0 && y > 0)
                     {
@@ -177,9 +177,9 @@ namespace Lab_11
                         chetv = 4;
                     }
 
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                     Console.WriteLine($"Точка находится в {chetv} четверти");
-                    Console.ResetColor();
+                    Console.ResetColor(); // сбрасываю цвета консоли
 
                     Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
                     Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
@@ -207,37 +207,37 @@ namespace Lab_11
                     {
                         if (numb % 2 == 0)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Отрицательное четное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Отрицательное нечетное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                     }
                     else if (numb > 0)
                     {
                         if (numb % 2 == 0)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Положительное четное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Положительное нечетное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                         Console.WriteLine($"Нулевое число");
-                        Console.ResetColor();
+                        Console.ResetColor(); // сбрасываю цвета консоли
                     }
 
 
@@ -267,42 +267,42 @@ namespace Lab_11
                     {
                         if (nmbr > 99)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Четное трехзначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else if (nmbr > 9 && nmbr < 100)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Четное двузначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Четное однозначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                     }
                     else
                     {
                         if (nmbr > 99)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Нечетное трехзначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else if (nmbr > 9 && nmbr < 100)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Нечетное двузначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                         else
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; // устанавливаю цвет текста
                             Console.WriteLine($"Нечетное однозначное число");
-                            Console.ResetColor();
+                            Console.ResetColor(); // сбрасываю цвета консоли
                         }
                     }
 
