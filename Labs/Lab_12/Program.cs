@@ -139,6 +139,60 @@ namespace Lab_12
                     Console.Clear(); // очищаю консоль
                     Main(args); // перезапускаю программу
                     break;
+
+                case ConsoleKey.D4:
+
+                    Console.Write(" - задание \n");
+                    string[] numbers3 = new string[] {"", "сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот"};
+                    string[] numbers2 = new string[] {"", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семдесят", "восемдесять", "девяносто"};
+                    string[] numbers1 = new string[] {"", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"};
+                    string[] numbers11 = new string[] {"", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"};
+                    Console.Write("Введите число [100-999] - ");
+                    bool isNumber = int.TryParse(Console.ReadLine(), out int numb);
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isNumber == false || numb < 100 || numb > 999)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    if ((numb % 100) > 10 && (numb % 100) < 20)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                        Console.WriteLine($"{numbers3[numb / 100]} {numbers11[numb % 10]}");
+                        Console.ResetColor(); // сбрасываю цвета консоли
+                    }
+                    else if (((numb % 100) > 19 || (numb % 100) == 10) && (numb % 100) < 100)
+                    {
+                        if ((numb%10) == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                            Console.WriteLine($"{numbers3[numb / 100]} {numbers2[(numb / 10) % 10]}");
+                            Console.ResetColor(); // сбрасываю цвета консоли
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                            Console.WriteLine($"{numbers3[numb / 100]} {numbers2[(numb / 10) % 10]} {numbers1[numb % 10]}");
+                            Console.ResetColor(); // сбрасываю цвета консоли  
+                        }
+                    }
+                    else if (((numb / 10) % 10) == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                        Console.WriteLine($"{numbers3[numb / 100]} {numbers1[numb % 10]}");
+                        Console.ResetColor(); // сбрасываю цвета консоли  
+                    }
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
                 default:
                     break;
             }
