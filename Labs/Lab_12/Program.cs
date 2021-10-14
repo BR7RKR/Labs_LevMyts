@@ -51,7 +51,6 @@ namespace Lab_12
 
                     Console.Write(" - задание \n");
                     string[] compasDir = new string[] { "С", "В", "Ю", "З"};
-                    //string[] months = new string[] { "null", "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря" };
                     Console.Write("Введите исходное направление робота - ");
                     string startPos = Console.ReadLine();
                     Console.Write("Введите команду - ");
@@ -184,6 +183,101 @@ namespace Lab_12
                         Console.ResetColor(); // сбрасываю цвета консоли  
                     }
 
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+
+                case ConsoleKey.D5:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите год - ");
+                    bool isYear = int.TryParse(Console.ReadLine(), out int year);
+                    
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isYear == false || year < 0)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                    switch ((year) % 10)
+                    {
+                        case 0:
+                        case 1:
+                            Console.Write("белый");
+                            break;
+                        case 2:
+                        case 3:
+                            Console.Write("черный");
+                            break;
+                        case 4:
+                        case 5:
+                            Console.Write("зелёный");
+                            break;
+                        case 6:
+                        case 7:
+                            Console.Write("красный");
+                            break;
+                        case 8:
+                        case 9:
+                            Console.Write("жёлтый");
+                            break;
+                        default:
+                            break;
+                    }
+
+                    Console.Write(" год ");
+
+                    switch ((year + 8) % 12)
+                    {
+                        case 0:
+                            Console.Write("крысы");
+                            break;
+                        case 1:
+                            Console.Write("коровы");
+                            break;
+                        case 2:
+                            Console.Write("тигра");
+                            break;
+                        case 3:
+                            Console.Write("зайца");
+                            break;
+                        case 4:
+                            Console.Write("дракона");
+                            break;
+                        case 5:
+                            Console.Write("змеи");
+                            break;
+                        case 6:
+                            Console.Write("лошади");
+                            break;
+                        case 7:
+                            Console.Write("овцы");
+                            break;
+                        case 8:
+                            Console.Write("обезьяны");
+                            break;
+                        case 9:
+                            Console.Write("курицы");
+                            break;
+                        case 10:
+                            Console.Write("собаки");
+                            break;
+                        case 11:
+                            Console.Write("свиньи");
+                            break;
+                        default:
+                            break;
+                    }
+                    Console.ResetColor(); //сбрасываю цвета консоли
+
+                    Console.WriteLine();
                     Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
                     Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
                     Console.WriteLine("Нажмите ENTER для продолжения");
