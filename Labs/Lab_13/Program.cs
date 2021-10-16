@@ -8,7 +8,7 @@ namespace Lab_13
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Лабораторная работа номер 12");
+            Console.WriteLine("Лабораторная работа номер 13");
             Console.WriteLine("Введите цифру от (1-5) для выбора задачи: ");
 
             var key = Console.ReadKey().Key;
@@ -59,6 +59,7 @@ namespace Lab_13
                         k += 1;
                         res *= Math.Round(i, 1);
                     }
+
                     Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
                     Console.WriteLine($"Ответ: {res}");
                     Console.ResetColor(); // сбрасываю цвета консоли
@@ -118,7 +119,7 @@ namespace Lab_13
                     double _res = 0;
                     if (A == 0)
                     {
-                        _res = 0;
+                        _res = 1;
                     }
                     else
                     {
@@ -141,6 +142,40 @@ namespace Lab_13
                     Main(args); // перезапускаю программу
                     break;
 
+                case ConsoleKey.D5:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите число A - ");
+                    bool isA = double.TryParse(Console.ReadLine(), out double _A);
+                    Console.Write("Введите число N - ");
+                    bool is_N = ulong.TryParse(Console.ReadLine(), out ulong _N);
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (is_N == false || isA == false)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    double _result = 0;
+                    sbyte ratio = 1;
+                    for (ulong i = 0; i <= _N; i++)
+                    {
+                        _result += ratio * Math.Pow(_A, i);
+                        ratio *= -1;
+                    }
+
+
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                    Console.WriteLine($"Сумма - {_result}");
+                    Console.ResetColor(); // сбрасываю цвета консоли
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
                 default:
                     break;
             }
