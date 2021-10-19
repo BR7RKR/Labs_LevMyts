@@ -103,6 +103,7 @@ namespace Lab_14
                             buffer += i;
                         }
                     }
+
                     Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
                     Console.WriteLine($"K - {K}, сумма = {buffer}");
                     Console.ResetColor(); // сбрасываю цвета консоли
@@ -115,6 +116,114 @@ namespace Lab_14
                     Console.Clear(); // очищаю консоль
                     Main(args); // перезапускаю программу
                     break;
+
+                case ConsoleKey.D4:
+
+                    Console.Write(" - задание \n");
+                    float contribution = 1000;
+                    Console.Write("Введите процент - ");
+                    bool isPercent = float.TryParse(Console.ReadLine(), out float percent);
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isPercent == false || percent < 0 || percent > 25)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    int months = 0;
+
+                    for (int i = 0; contribution <= 1100; i++)
+                    {
+                        contribution *= (percent / 100 + 1);
+                        months = i;
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                    Console.WriteLine($"Число месяцев - {months}, итоговый размер вклада = {contribution}");
+                    Console.ResetColor(); // сбрасываю цвета консоли
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+                case ConsoleKey.D5:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите число A - ");
+                    bool isA = ulong.TryParse(Console.ReadLine(), out ulong A);
+                    Console.Write("Введите число B - ");
+                    bool isB = ulong.TryParse(Console.ReadLine(), out ulong B);
+
+                    ulong temp;
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isA == false || isB == false)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    for (ulong i = 0; A != B; i++)
+                    {
+                        temp = Math.Max(A, B) - Math.Min(A, B);
+                        A = B;
+                        B = temp;
+                    }
+                    temp = B;
+
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                    Console.WriteLine($"НОД - {temp}");
+                    Console.ResetColor(); // сбрасываю цвета консоли
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
+                case ConsoleKey.D6:
+
+                    Console.Write(" - задание \n");
+                    Console.Write("Введите число Фибоначчи - ");
+                    bool isN = ulong.TryParse(Console.ReadLine(), out ulong n);
+
+                    //вызываю собственные ошибки при нарушении правил ввода 
+                    if (isN == false || n <= 1)
+                    {
+                        throw WrongNumberEx;
+                    }
+
+                    ulong k = 2;
+                    ulong n1 = 1;
+                    ulong n2 = 1;
+                    ulong n0 = 0;
+                    while (n0 < n)
+                    {
+                        ++k;
+                        n0 = n2 + n1;
+                        n2 = n1;
+                        n1 = n0;
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
+                    Console.WriteLine($"Порядковый номер - {k}");
+                    Console.ResetColor(); // сбрасываю цвета консоли
+
+                    Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
+                    Console.ForegroundColor = ConsoleColor.Black; // меняю цвет фона текста
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    Console.ResetColor(); //сбрасываю цвета консоли
+                    Console.ReadLine(); // запрашиваю ввод
+                    Console.Clear(); // очищаю консоль
+                    Main(args); // перезапускаю программу
+                    break;
+
                 default:
                     break;
             }
