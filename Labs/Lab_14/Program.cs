@@ -138,7 +138,7 @@ namespace Lab_14
                     }
 
                     Console.ForegroundColor = ConsoleColor.Green;//меняю цвет текста
-                    Console.WriteLine($"Число месяцев - {months}, итоговый размер вклада = {contribution}");
+                    Console.WriteLine($"Число месяцев - {months+1}, итоговый размер вклада = {contribution}");
                     Console.ResetColor(); // сбрасываю цвета консоли
 
                     Console.BackgroundColor = ConsoleColor.Blue;  //меняю цвет фона текста
