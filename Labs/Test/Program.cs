@@ -6,15 +6,45 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            double I = 10;
-            double I2 = 15;
-            Point point1 = new Point { X= 6, Y =2 };
+            //перестановка местами двух элементов в массиве
+            static void Swap(int[] array, int i, int j)
+            {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            static void GnomeSort(int[] inArray)
+            {
+                int i = 1;
+                int j = 2;
+                while (i < inArray.Length)
+                {
+                    if (inArray[i - 1] <= inArray[i])
+                    {
+                        i = j;
+                        j += 1;
+                    }
+                    else
+                    {
+                        Swap(inArray, i - 1, i);
+                        i -= 1;
+                        if (i == 0)
+                        {
+                            i = j;
+                            j += 1;
+                        }
+                    }
+                }
+            }
 
-            Point point2 = new Point { X = 2, Y = 6 };
+            int[] arr = new int[] { 1, 322, 5, -1, 7, 1 };
 
-            double range = Math.Sqrt(Math.Pow(point2.X - point1.X, 2) + Math.Pow(point2.Y - point1.Y, 2));
-
-            Console.WriteLine(range);
+            Array.Sort(arr);
+            foreach (var item in arr)
+            {
+                Console.Write($"{item} ");
+            }
+            
         }
     }
 
